@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code from Git repository...'
+                echo "Checking out branch: ${env.BRANCH_NAME ?: 'main'}..."
                 checkout scm
             }
         }
@@ -28,10 +28,11 @@ pipeline {
             }
         }
 
-        stage('Package') {
+        stage('Package & Docker Simulation') {
             steps {
-                echo 'Packaging application...'
-                echo 'Build completed successfully.'
+                echo 'Packaging application artifact...'
+                echo 'Simulating Docker image build and push...'
+                bat 'echo Docker Image jenkins-tutorial-app built successfully'
             }
         }
     }
@@ -41,7 +42,7 @@ pipeline {
             echo 'Pipeline execution complete.'
         }
         success {
-            echo 'Build and Testing completed SUCCESSFULLY!'
+            echo "Branch ${env.BRANCH_NAME ?: 'main'} Build & Testing completed SUCCESSFULLY!"
         }
     }
 }
