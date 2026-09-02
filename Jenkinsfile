@@ -24,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running Unit Tests...'
-                bat 'npm test'
+                bat 'npx -y jest'
             }
         }
 
