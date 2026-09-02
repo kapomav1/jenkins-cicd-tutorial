@@ -15,6 +15,6 @@ describe('Jenkins CI/CD Tutorial Project Tests', () => {
         const jenkinsfileContent = fs.readFileSync(path.join(__dirname, '../Jenkinsfile'), 'utf8');
         expect(jenkinsfileContent).toContain("stage('Build')");
         expect(jenkinsfileContent).toContain("stage('Test')");
-        expect(jenkinsfileContent).toContain("stage('Docker Build & Deploy')");
+        expect(jenkinsfileContent).toContain("stage('Package')");
     });
 });
