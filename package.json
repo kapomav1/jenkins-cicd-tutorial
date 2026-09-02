@@ -1,0 +1,12 @@
+{
+  "name": "jenkins-cicd-tutorial",
+  "version": "1.0.0",
+  "description": "Jenkins Tutorial CI/CD Sample Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
